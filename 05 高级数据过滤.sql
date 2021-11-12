@@ -81,4 +81,12 @@ SELECT prod_name, prod_price
 FROM Products
 WHERE prod_price BETWEEN 3 AND 6;
 
+-- 5.5.4 下面的 SQL 语句有问题吗？（尝试在不运行的情况下指出。）
+--       SELECT vend_name
+--       FROM Vendors
+--       ORDER BY vend_name
+--       WHERE vend_country = 'USA' AND vend_state = 'CA';
+-- 有问题的。ORDER BY 子句应当放在查询语句的最后面
+
+
 
