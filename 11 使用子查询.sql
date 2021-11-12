@@ -88,11 +88,12 @@ WHERE cust_id IN (SELECT cust_id
 --        哪些订单（在 OrderItems 中）购买了 prod_id 为 BR01 的产品，然
 --        后从 Orders 表中返回每个产品对应的顾客 ID（cust_id）和订单日
 --        期（order_date）。按订购日期对结果进行排序。
-SELECT order_date
+SELECT cust_id, order_date
 FROM Orders
 WHERE order_num IN (SELECT order_num
                     FROM OrderItems
-                    WHERE prod_id = 'BR01');
+                    WHERE prod_id = 'BR01')
+ORDER BY order_date;
 
 -- 11.5.3 现在我们让它更具挑战性。在上一个挑战题，返回购买 prod_id 为
 --        BR01 的产品的所有顾客的电子邮件（Customers 表中的 cust_email）。
